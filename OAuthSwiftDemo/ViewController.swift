@@ -463,7 +463,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func snapshot() -> NSData {
         UIGraphicsBeginImageContext(self.view.frame.size)
-        self.view.layer.renderInContext(UIGraphicsGetCurrentContext())
+        self.view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let fullScreenshot = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         UIImageWriteToSavedPhotosAlbum(fullScreenshot, nil, nil, nil)

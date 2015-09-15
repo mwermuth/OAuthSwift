@@ -69,7 +69,6 @@ public class OAuth1Swift: NSObject {
                     parameters["oauth_token"] = token
                 }
                 if (parameters["oauth_token"] != nil && (self.allowMissingOauthVerifier || parameters["oauth_verifier"] != nil)) {
-                    var credential: OAuthSwiftCredential = self.client.credential
                     self.client.credential.oauth_token = parameters["oauth_token"]!
                     if (parameters["oauth_verifier"] != nil) {
                         self.client.credential.oauth_verifier = parameters["oauth_verifier"]!
